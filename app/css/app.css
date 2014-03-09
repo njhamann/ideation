@@ -1,13 +1,20 @@
 /* app css stylesheet */
 ul.menu li {
-  float: left;
-  margin-right: 10px; }
+  float: right;
+  margin-top: 10px;
+  margin-left: 10px; }
 
 .list-container {
-  margin-top: 20px; }
+  background: #EEE;
+  margin-top: 10px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  float: left;
+  border-radius: 5px; }
   .list-container .list-item {
     padding: 10px;
-    background: #EEE;
+    background: #CCC;
     float: left;
     margin: 0 10px 10px 0;
     min-width: 100px;
