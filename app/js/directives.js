@@ -3,8 +3,8 @@
 /* Directives */
 
 
-angular.module('myApp.directives', []).
-    directive('sortable', [
+angular.module('myApp.directives', [])
+    .directive('sortable', [
     'MoveIndex', 
     function(move) {
         var startingIndex = null;
@@ -22,4 +22,17 @@ angular.module('myApp.directives', []).
                 }
             });
         };
-    }]);
+    }])
+    .directive('editMode', function() {
+        var startingIndex = null;
+        return function(scope, elm, attrs) {
+            scope.$watch('isEditing', function(isEditing){
+                console.log('isEdiable2');
+                if(isEditing){
+                    $('#list_container').sortable( 'disable' );
+                }else{
+                    $('#list_container').sortable( 'enable' );
+                }
+            });
+        };
+    });

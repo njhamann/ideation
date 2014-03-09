@@ -19,7 +19,8 @@
                             ng-click="$emit('removeItem', item)">&times;</button>
                     </div>
                     <div class="edit-state"
-                        ng-show="isEditing">
+                        ng-show="isEditing"
+                        edit-mode>
                         <input ng-model="item.name" />
                         <button class="btn btn-xs" ng-click="isEditing = false">
                             <span class="glyphicon glyphicon-plus"></span>
