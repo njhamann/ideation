@@ -1,0 +1,38 @@
+/* app css stylesheet */
+ul.menu{
+    li{
+        float:left;
+        margin-right:10px;
+    }
+}
+
+.list-container{
+    margin-top:20px;
+    .list-item{
+        padding:10px;
+        background: #EEE;
+        //border-right: 5px solid #CCC;
+        //border-bottom: 5px solid #CCC;
+        float:left;
+        margin:0 10px 10px 0;
+        min-width:100px;
+        border-radius: 5px;
+        box-sizing: border-box;
+        height: 40px;
+        .primary-state{
+            position:relative;
+            padding:0px 30px 0px 0px;
+            button{
+                position: absolute;
+                top:0px;
+                right: 0px;
+            }
+        }
+        .edit-state{
+            input{
+                border: none;
+                background: transparent;
+            }
+        }
+    }
+}
