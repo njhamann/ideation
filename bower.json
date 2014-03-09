@@ -1,0 +1,18 @@
+{
+  "name": "ideation",
+  "version": "0.0.1",
+  "homepage": "''",
+  "authors": [
+    "Noah <njhamann@gmail.com>"
+  ],
+  "description": "ideation",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
