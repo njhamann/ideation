@@ -9,12 +9,14 @@
                 * strike through
                 * delete
                 --> 
-                <div class="list-item" 
+                <div class="list-item default-color {{item.color}}" 
                     ng-repeat="item in listItems"
+                    ng-class="{'editing':isEditing}"
                     ng-controller="ListItem">
                     <div class="primary-state" 
+                        ng-click="isEditing = true; editingClass = 'editing'"
                         ng-show="!isEditing">
-                        <p ng-click="isEditing = true">{{item.name}}</p>
+                        <p>{{item.name}}</p>
                         <button type="button" class="close"
                             ng-click="$emit('removeItem', item)">&times;</button>
                     </div>
@@ -22,11 +24,18 @@
                         ng-show="isEditing"
                         edit-mode>
                         <input ng-model="item.name" />
-                        <button class="btn btn-xs" ng-click="isEditing = false">
+                        <button class="btn btn-xs" ng-click="saveItem()">
                             <span class="glyphicon glyphicon-plus"></span>
                         </button>
                     </div>
-                    <div class="menu-state"></div>
+                    <div class="menu-state"
+                        ng-show="isEditing">
+                        <ul class="color-menu list-unstyled">
+                            <li class="white" ng-click="item.color = 'white'"></li>
+                            <li class="blue" ng-click="item.color = 'blue'"></li>
+                            <li class="red" ng-click="item.color = 'red'"></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

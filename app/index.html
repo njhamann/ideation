@@ -18,7 +18,11 @@
                     <li><a href="#">previous items</a></li>
                     <li><a href="#/settings">settings</a></li>
     -->
-                    <li><a href class="btn btn-default" ng-click="$broadcast('addItem')"><span class="glyphicon glyphicon-plus"></span></a></li>
+                    <li><a href class="btn btn-default" ng-click="$broadcast('clearList')"><span class="glyphicon glyphicon-remove"></span> Clear List</a></li>
+                    <!--
+                    <li><a href class="btn btn-default" ng-click="$broadcast('addItem')"><span class="glyphicon glyphicon-plus"></span> Group</a></li>
+                    -->
+                    <li><a href class="btn btn-default" ng-click="$broadcast('addItem')"><span class="glyphicon glyphicon-plus"></span> List Item</a></li>
                 </ul>
             </div>
         </div>
@@ -49,5 +53,6 @@
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
+  <script src="vendors/angular-local-storage/angular-local-storage.min.js"></script>
 </body>
 </html>

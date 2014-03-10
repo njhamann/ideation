@@ -1,3 +1,19 @@
+/* colors */
+.default-color{
+    background:#CCC; 
+}
+.white{
+    background:#FFF; 
+}
+.blue{
+    color:#FFF;
+    background:blue; 
+}
+.red{
+    color:#FFF;
+    background:red; 
+}
+
 /* app css stylesheet */
 ul.menu{
     li{
@@ -10,35 +26,53 @@ ul.menu{
 .list-container{
     background:#EEE;
     margin-top:10px;
-    padding:20px;
+    padding:20px 20px 10px 20px;
     width:100%;
     box-sizing: border-box;
     float:left;
     border-radius: 5px;
     .list-item{
-        padding:10px;
-        background: #CCC;
+        //padding:10px;
+        //background: #CCC;
         //border-right: 5px solid #CCC;
         //border-bottom: 5px solid #CCC;
         float:left;
         margin:0 10px 10px 0;
         min-width:100px;
         border-radius: 5px;
-        box-sizing: border-box;
         height: 40px;
+        &.editing{
+            border-radius: 5px 5px 0 0;
+        }
         .primary-state{
             position:relative;
-            padding:0px 30px 0px 0px;
+            padding:10px 30px 10px 10px;
+            box-sizing: border-box;
+            height: 40px;
             button{
                 position: absolute;
-                top:0px;
-                right: 0px;
+                top: 8px;
+                right: 8px;
             }
         }
         .edit-state{
+            padding:10px 10px 10px 10px;
+            box-sizing: border-box;
+            height: 40px;
             input{
                 border: none;
                 background: transparent;
+            }
+        }
+        ul.color-menu{
+            width: 100%;
+            margin:0;
+            border-radius: 0 0 5px 5px;
+            overflow:hidden;
+            li{
+                //background:#CCC; 
+                height: 40px;
+                width: 100%;
             }
         }
     }
