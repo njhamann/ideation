@@ -24,16 +24,19 @@
                         ng-show="isEditing"
                         edit-mode>
                         <input ng-model="item.name" />
+                        <!--
                         <button class="btn btn-xs" ng-click="saveItem()">
                             <span class="glyphicon glyphicon-plus"></span>
                         </button>
+                        -->
                     </div>
                     <div class="menu-state"
                         ng-show="isEditing">
                         <ul class="color-menu list-unstyled">
-                            <li class="white" ng-click="item.color = 'white'"></li>
-                            <li class="blue" ng-click="item.color = 'blue'"></li>
-                            <li class="red" ng-click="item.color = 'red'"></li>
+                            <li class="white" ng-click="item.color = 'white'; saveItem()"></li>
+                            <li class="grey" ng-click="item.color = 'grey'; saveItem()"></li>
+                            <li class="blue" ng-click="item.color = 'blue'; saveItem()"></li>
+                            <li class="red" ng-click="item.color = 'red'; saveItem()"></li>
                         </ul>
                     </div>
                 </div>
