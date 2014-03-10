@@ -20,6 +20,6 @@
     "underscore": "~1.6.0",
     "jquery-ui": "~1.10.4",
     "jqueryui-touch-punch": "*",
-    "angular-local-storage": "~0.0.1"
+    "angular-local-storage": "~0.0.1",
   }
 }

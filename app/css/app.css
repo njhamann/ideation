@@ -49,7 +49,7 @@ ul.menu li {
     height: 40px; }
     .list-container .list-item.editing {
       border-radius: 5px 5px 0 0; }
-      .list-container .list-item.editing .primary-state .input {
+      .list-container .list-item.editing .primary-state input {
         background: rgba(255, 255, 255, 0.3); }
     .list-container .list-item .primary-state {
       position: relative;
@@ -60,13 +60,13 @@ ul.menu li {
         position: absolute;
         top: 8px;
         right: 8px; }
-      .list-container .list-item .primary-state .input {
+      .list-container .list-item .primary-state input {
         background: transparent; }
     .list-container .list-item .edit-state {
       padding: 10px 10px 10px 10px;
       box-sizing: border-box;
       height: 40px; }
-      .list-container .list-item .edit-state input {
+      .list-container .list-item .edit-state .inputer {
         border: none;
         background: transparent; }
     .list-container .list-item ul.color-menu {

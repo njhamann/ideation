@@ -60,7 +60,7 @@ ul.menu{
             .primary-state{
                 button{
                 }
-                .input{
+                input{
                     background: rgba(255, 255, 255, 0.3);
                 }
             }
@@ -75,7 +75,7 @@ ul.menu{
                 top: 8px;
                 right: 8px;
             }
-            .input{
+            input{
                 background: transparent;
             }
         }
@@ -83,7 +83,7 @@ ul.menu{
             padding:10px 10px 10px 10px;
             box-sizing: border-box;
             height: 40px;
-            input{
+            .inputer{
                 border: none;
                 background: transparent;
             }

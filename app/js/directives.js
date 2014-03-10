@@ -8,13 +8,33 @@ angular.module('myApp.directives', [])
         return function(scope, elm, attrs) {
             //document events
             $(document).on('click', function(e) {
-                scope.$broadcast('documentClicked');
-                scope.$apply();
+                scope.$apply(function(){
+                    scope.$broadcast('documentClicked');
+                }); 
             });
             
             $(document).on('click', '.list-item', function(e){
                 e.stopPropagation();
             });
+        }; 
+    })
+    .directive('scaleInput', function() {
+        function resize($el, len){
+            var value = $el.val(); 
+            var len = len || value.length * 7;
+            if(len > 100){
+                $el.width(len);
+            }else{
+                $el.width(100);
+            }
+        }
+        return function(scope, elm, attrs) {
+            //document events
+            elm.on('keyup keydown', function(e) {
+                resize($(this));
+            });
+
+            resize($(elm), scope.$eval(attrs.ngModel).length);
             
         }; 
     })
@@ -31,8 +51,8 @@ angular.module('myApp.directives', [])
                     if(startingIndex != null){
                         scope.$apply(function(){
                             move(scope.listItems, startingIndex, ui.item.index());
+                            scope.saveList();
                         });
-                        scope.saveList();
                     }
                 }
             });
@@ -48,38 +68,4 @@ angular.module('myApp.directives', [])
                 }
             });
         };
-    })
-    .directive('contenteditable', function() {
-      return {
-        restrict: 'A', // only activate on element attribute
-        require: '?ngModel', // get a hold of NgModelController
-        link: function(scope, element, attrs, ngModel) {
-          if(!ngModel) return; // do nothing if no ng-model
-
-          // Specify how UI should be updated
-          console.log(scope.$eval(ngModel.$viewValue));
-          ngModel.$render = function() {
-            element.html(scope.$eval(ngModel.$viewValue) || '');
-          };
-
-          // Listen for change events to enable binding
-          element.on('blur keyup change', function() {
-            scope.$apply(read);
-          });
-          read(); // initialize
-
-          // Write data to the model
-          function read() {
-            var html = element.html();
-            // When we clear the content editable the browser leaves a <br> behind
-            // If strip-br attribute is provided then we strip this out
-            if( attrs.stripBr && html == '<br>' ) {
-              html = '';
-            }
-            
-            ngModel.$setViewValue(html);
-          }
-        
-        }
-      };
     });

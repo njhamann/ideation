@@ -41,7 +41,7 @@ angular.module('myApp.controllers', []).
     function($scope) {
         $scope.isEditing = false;
         if(!$scope.item.name){
-            $scope.isEditing = true;
+            //$scope.isEditing = true;
         }
         $scope.saveItem = function(){
             $scope.isEditing = false;

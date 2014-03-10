@@ -16,17 +16,9 @@
                     <div class="primary-state" 
                         ng-click="isEditing = true; editingClass = 'editing'"
                         edit-mode>
-                        <div class="input" 
-                            contenteditable 
-                            name="name"
-                            ng-model="name" 
-                            strip-br="true">{{item.name}}</div>
-                        <!--
-                        <input class="no-glow" ng-model="item.name" />
-                        --> 
-                        <!--
-                        <p>{{item.name}}</p>
-                        -->
+                        <input class="no-glow" 
+                            ng-model="item.name"
+                            scale-input />
                         <button type="button" class="close"
                             ng-show="isEditing"
                             ng-click="$emit('removeItem', item)">&times;</button>
