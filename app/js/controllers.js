@@ -30,6 +30,10 @@ angular.module('myApp.controllers', []).
             $scope.listItems = [];
             $scope.saveList();
         });
+        
+        $scope.$on('documentClicked', function(e){
+            $scope.saveList();
+        });
          
     }])
     .controller('ListItem', [
@@ -43,6 +47,10 @@ angular.module('myApp.controllers', []).
             $scope.isEditing = false;
             $scope.saveList();
         };
+
+        $scope.$on('documentClicked', function(e){
+            $scope.isEditing = false;
+        });
     }])
     .controller('Settings', [function() {
 

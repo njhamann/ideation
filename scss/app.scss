@@ -1,17 +1,31 @@
 /* colors */
-.default-color, .grey{
+.color-default, .grey{
     background:#CCC; 
 }
-.white{
-    background:#FFF; 
-}
-.blue{
+.color-1{
     color:#FFF;
-    background:blue; 
+    background:#42b5e9; 
 }
-.red{
+.color-2{
     color:#FFF;
-    background:red; 
+    background:#7cc678; 
+}
+.color-3{
+    color:#FFF;
+    background:#e66f70; 
+}
+.color-4{
+    color:#FFF;
+    background:#d0ad59; 
+}
+.color-5{
+    color:#FFF;
+    background:#b67fd6; 
+}
+.no-glow{
+    outline: none;
+    border:none !important;
+    box-shadow:none !important;
 }
 
 /* app css stylesheet */
@@ -43,6 +57,13 @@ ul.menu{
         height: 40px;
         &.editing{
             border-radius: 5px 5px 0 0;
+            .primary-state{
+                button{
+                }
+                .input{
+                    background: rgba(255, 255, 255, 0.3);
+                }
+            }
         }
         .primary-state{
             position:relative;
@@ -53,6 +74,9 @@ ul.menu{
                 position: absolute;
                 top: 8px;
                 right: 8px;
+            }
+            .input{
+                background: transparent;
             }
         }
         .edit-state{

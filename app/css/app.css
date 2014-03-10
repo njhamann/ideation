@@ -1,17 +1,31 @@
 /* colors */
-.default-color, .grey {
+.color-default, .grey {
   background: #CCC; }
 
-.white {
-  background: #FFF; }
-
-.blue {
+.color-1 {
   color: #FFF;
-  background: blue; }
+  background: #42b5e9; }
 
-.red {
+.color-2 {
   color: #FFF;
-  background: red; }
+  background: #7cc678; }
+
+.color-3 {
+  color: #FFF;
+  background: #e66f70; }
+
+.color-4 {
+  color: #FFF;
+  background: #d0ad59; }
+
+.color-5 {
+  color: #FFF;
+  background: #b67fd6; }
+
+.no-glow {
+  outline: none;
+  border: none !important;
+  box-shadow: none !important; }
 
 /* app css stylesheet */
 ul.menu li {
@@ -35,6 +49,8 @@ ul.menu li {
     height: 40px; }
     .list-container .list-item.editing {
       border-radius: 5px 5px 0 0; }
+      .list-container .list-item.editing .primary-state .input {
+        background: rgba(255, 255, 255, 0.3); }
     .list-container .list-item .primary-state {
       position: relative;
       padding: 10px 30px 10px 10px;
@@ -44,6 +60,8 @@ ul.menu li {
         position: absolute;
         top: 8px;
         right: 8px; }
+      .list-container .list-item .primary-state .input {
+        background: transparent; }
     .list-container .list-item .edit-state {
       padding: 10px 10px 10px 10px;
       box-sizing: border-box;

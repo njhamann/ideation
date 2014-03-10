@@ -9,34 +9,37 @@
                 * strike through
                 * delete
                 --> 
-                <div class="list-item default-color {{item.color}}" 
+                <div class="list-item color-default {{item.color}}" 
                     ng-repeat="item in listItems"
                     ng-class="{'editing':isEditing}"
                     ng-controller="ListItem">
                     <div class="primary-state" 
                         ng-click="isEditing = true; editingClass = 'editing'"
-                        ng-show="!isEditing">
-                        <p>{{item.name}}</p>
-                        <button type="button" class="close"
-                            ng-click="$emit('removeItem', item)">&times;</button>
-                    </div>
-                    <div class="edit-state"
-                        ng-show="isEditing"
                         edit-mode>
-                        <input ng-model="item.name" />
+                        <div class="input" 
+                            contenteditable 
+                            name="name"
+                            ng-model="name" 
+                            strip-br="true">{{item.name}}</div>
                         <!--
-                        <button class="btn btn-xs" ng-click="saveItem()">
-                            <span class="glyphicon glyphicon-plus"></span>
-                        </button>
+                        <input class="no-glow" ng-model="item.name" />
+                        --> 
+                        <!--
+                        <p>{{item.name}}</p>
                         -->
+                        <button type="button" class="close"
+                            ng-show="isEditing"
+                            ng-click="$emit('removeItem', item)">&times;</button>
                     </div>
                     <div class="menu-state"
                         ng-show="isEditing">
                         <ul class="color-menu list-unstyled">
-                            <li class="white" ng-click="item.color = 'white'; saveItem()"></li>
-                            <li class="grey" ng-click="item.color = 'grey'; saveItem()"></li>
-                            <li class="blue" ng-click="item.color = 'blue'; saveItem()"></li>
-                            <li class="red" ng-click="item.color = 'red'; saveItem()"></li>
+                            <li class="color-default" ng-click="item.color = 'color-default'; saveItem()"></li>
+                            <li class="color-1" ng-click="item.color = 'color-1'; saveItem()"></li>
+                            <li class="color-2" ng-click="item.color = 'color-2'; saveItem()"></li>
+                            <li class="color-3" ng-click="item.color = 'color-3'; saveItem()"></li>
+                            <li class="color-4" ng-click="item.color = 'color-4'; saveItem()"></li>
+                            <li class="color-5" ng-click="item.color = 'color-5'; saveItem()"></li>
                         </ul>
                     </div>
                 </div>
